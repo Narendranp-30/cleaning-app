@@ -85,11 +85,11 @@ function App() {
             sx={{ display: "inline", marginRight: "15px" }}
           >
             <Email sx={{ fontSize: 16, marginRight: "5px" }} />
-            contact@amiso.com
+            contact@climaestro.com
           </Typography>
         </Box>
 
-        {/* Social Icons */}
+        
         <Box>
           <IconButton href="https://www.linkedin.com" target="_blank">
             <LinkedIn sx={{ color: "#0077b5",marginRight: "10px" }} />
@@ -103,16 +103,16 @@ function App() {
         </Box>
       </Box>
 
-      {/* Main AppBar */}
+      
     <Appbar />
 
 {/* Hero Section */}
 <Box
   sx={{
     backgroundImage: 'url("https://emiratescleaners.com/wp-content/themes/emiratescleaners/images/cleaner1.png")',
-    backgroundSize: "contain", // Ensures the image doesn't stretch
-    backgroundRepeat: "no-repeat", // Prevents the image from repeating
-    backgroundPosition: "right 30% bottom 0%", // Positions the image in the bottom-right corner
+    backgroundSize: "contain", 
+    backgroundRepeat: "no-repeat", 
+    backgroundPosition: "right 30% bottom 0%", 
     height: "600px",
     bottom: '80px',
     textAlign: "center",
@@ -123,7 +123,7 @@ function App() {
     alignItems: "center",
     marginBottom: "50px",
     margin: 0,
-    position: "relative", // Make it a positioned parent for floating children
+    position: "relative", 
   }}
 >
   <Typography variant="h3" gutterBottom>
@@ -143,13 +143,13 @@ function App() {
       //boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)", // Adds shadow for floating effect
       padding: "40px 20px",
       textAlign: "center",
-      position: "absolute", // Positions it inside the Hero Section
-      top: "580px", // Adjusts its vertical position
-      left: "50%", // Centers horizontally
-      transform: "translate(-50%, -50%)", // Fine-tunes centering
-      zIndex: 10, // Ensures it floats above the Hero Section
-      width: "90%", // Responsive width
-      borderRadius: "10px", // Rounded corners
+      position: "absolute", 
+      top: "580px",
+      left: "50%", 
+      transform: "translate(-50%, -50%)", 
+      zIndex: 10, 
+      width: "90%", 
+      borderRadius: "10px", 
     }}
   >
     
@@ -313,7 +313,7 @@ function App() {
     ].map((teamMember, index) => (
       <Grid item xs={12} sm={6} md={4} key={index}>
         <Card sx={{ position: "relative", overflow: "hidden" }}>
-          {/* Image as Background */}
+        
           <Box
             sx={{
               height: "300px",
@@ -330,17 +330,17 @@ function App() {
           <Box
             sx={{
               position: "absolute",
-              bottom: "20px", // Raised slightly above the bottom edge
+              bottom: "20px", 
               left: "50%",
               transform: "translateX(-50%)",
               zIndex: 1,
-              backgroundColor: "rgba(0, 0, 0, 0.7)", // Dark semi-transparent background for visibility
-              color: "#ffffff", // White text for contrast
+              backgroundColor: "rgba(0, 0, 0, 0.7)", 
+              color: "#ffffff", 
               padding: "10px 20px",
               borderRadius: "20px",
               textAlign: "center",
               width: "80%",
-              boxShadow: "0 8px 12px rgba(0, 0, 0, 0.2)", // Stronger shadow for better separation
+              boxShadow: "0 8px 12px rgba(0, 0, 0, 0.2)", 
             }}
           >
             <Typography variant="h6" fontWeight="bold">
@@ -414,7 +414,7 @@ function App() {
                   <CountUp
                     start={0}
                     end={stat.number}
-                    duration={2} // Duration of the animation in seconds
+                    duration={2} 
                     separator=","
                   />
                 </Typography>
@@ -509,9 +509,9 @@ function App() {
     <Box
   sx={{
     backgroundColor: "#f5f5f5",
-    height: "150px", // Increased height for better spacing
+    height: "150px", 
     display: "flex",
-    flexDirection: "column", // Stacked vertically
+    flexDirection: "column", 
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
