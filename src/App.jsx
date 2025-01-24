@@ -103,40 +103,57 @@ function App() {
       </Box>
 
       {/* Main AppBar */}
-      <AppBar
-        position="static"
-        sx={{
-          backgroundColor: "#2196f3",
-          height: "80px",
-          marginTop: "1px", // Offset for the floating section
-        //  zIndex: 1100,
-        }}
-      >
-        <Toolbar>
-          <Typography variant="h6" style={{ flexGrow: 1 }}>
-            clemaestro Cleaning Services
-          </Typography>
-          <Button color="inherit">Home</Button>
-          <Button color="inherit">About</Button>
-          <Button color="inherit">Services</Button>
-          <Button color="inherit">Team</Button>
-          <Button color="inherit">Contact</Button>
-        </Toolbar>
-      </AppBar>
+      <Box
+  sx={{
+    display: "flex",
+    justifyContent: "center",
+     // Centers the navbar horizontally
+    alignItems: "center", // Centers the navbar vertically
+    //height: "100vh", // Full viewport height
+  }}
+>
+  <AppBar
+    position="static"
+    sx={{
+      backgroundColor: "rgba(100, 175, 236, 0.7)", // Semi-transparent blue
+      height: "80px", // Set the height for the navbar
+      width: "80%", // Adjust the width to your preference
+      boxShadow: "none", // Optional: Removes shadow for a cleaner look
+      backdropFilter: "blur(10px)",
+      zIndex: 1, // Optional: Adds a blur effect behind the navbar
+    }}
+  >
+    <Toolbar sx={{ display: "flex", justifyContent: "center", width: "100%", }}>
+      <Typography variant="h6" sx={{ flexGrow: 1,  }}>
+        clemaestro Cleaning Services
+      </Typography>
+      <Box sx={{ display: "flex", gap: 5 }}>
+        <Button color="inherit">Home</Button>
+        <Button color="inherit">About</Button>
+        <Button color="inherit">Services</Button>
+        <Button color="inherit">Team</Button>
+        <Button color="inherit">Contact</Button>
+      </Box>
+    </Toolbar>
+  </AppBar>
+</Box>
+
 {/* Hero Section */}
 <Box
   sx={{
     backgroundImage: 'url("https://emiratescleaners.com/wp-content/themes/emiratescleaners/images/cleaner1.png")',
     backgroundSize: "contain", // Ensures the image doesn't stretch
     backgroundRepeat: "no-repeat", // Prevents the image from repeating
-    backgroundPosition: "right 30% bottom 10%", // Positions the image in the bottom-right corner
+    backgroundPosition: "right 30% bottom 0%", // Positions the image in the bottom-right corner
     height: "600px",
+    bottom: '80px',
     textAlign: "center",
     backgroundColor: "#e3f2fd",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: "50px",
     margin: 0,
     position: "relative", // Make it a positioned parent for floating children
   }}
