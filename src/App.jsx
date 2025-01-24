@@ -12,6 +12,7 @@ import {
   Avatar,
   IconButton,
 } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import CountUp from "react-countup";
 import { Phone, Email, LinkedIn, Facebook, Instagram } from "@mui/icons-material";
 
@@ -42,6 +43,7 @@ function App() {
       author: { name: "Matt Ryan", role: "Lawyer", avatar: "https://via.placeholder.com/50" },
     },
   ];
+  
   return (
     <div
       style={{
@@ -308,7 +310,6 @@ function App() {
           ))}
         </Grid>
       </Box>
-
       <Box
   sx={{
     backgroundColor: "#f5f5f5",
@@ -330,34 +331,37 @@ function App() {
           {/* Image as Background */}
           <Box
             sx={{
-              height: "300px", // Controls the height of the image container
+              height: "300px",
               width: "100%",
-              backgroundImage: `url(${teamMember.image})`, // The image as background
-              backgroundSize: "500px 400px", // Ensure image fits without cropping
-              backgroundPosition: "center", // Center the image within the container
-              backgroundRepeat: "no-repeat", // Prevent repeating if the image doesn't cover all space
-              borderRadius: "8px 8px 0 0", // Rounded top corners
-              zIndex: 0, // Image is behind the name/role container
+              backgroundImage: `url(${teamMember.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              borderRadius: "8px 8px 0 0",
             }}
           />
-          
+
           {/* Floating Name and Role Container */}
           <Box
             sx={{
               position: "absolute",
-              bottom: "10px", // Position the name just above the image border
+              bottom: "20px", // Raised slightly above the bottom edge
               left: "50%",
               transform: "translateX(-50%)",
-              zIndex: 1, // Name appears above the image
-              backgroundColor: "#ffffff", // Slight background to make text visible
-              padding: "5px 10px",
-              borderRadius: "10px",
-              textAlign: "center", // Center the name and role text
-              width: "90%", // Adjust width to make sure the name/role container fits within the card
+              zIndex: 1,
+              backgroundColor: "rgba(0, 0, 0, 0.7)", // Dark semi-transparent background for visibility
+              color: "#ffffff", // White text for contrast
+              padding: "10px 20px",
+              borderRadius: "20px",
+              textAlign: "center",
+              width: "80%",
+              boxShadow: "0 8px 12px rgba(0, 0, 0, 0.2)", // Stronger shadow for better separation
             }}
           >
-            <Typography variant="h6">{teamMember.name}</Typography>
-            <Typography variant="body2" color="textSecondary">
+            <Typography variant="h6" fontWeight="bold">
+              {teamMember.name}
+            </Typography>
+            <Typography variant="body2" color="inherit">
               {teamMember.role}
             </Typography>
           </Box>
@@ -517,22 +521,52 @@ function App() {
         ))}
       </Grid>
     </Box>
+    <Box
+  sx={{
+    backgroundColor: "#f5f5f5",
+    height: "150px", // Increased height for better spacing
+    display: "flex",
+    flexDirection: "column", // Stacked vertically
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    padding: "0 20px",
+  }}
+>
+  {/* Copyright text */}
+  <Box sx={{ marginBottom: 2 }}>
+    <Typography variant="body2">
+      &copy; 2025 Amiso Cleaning Services. All rights reserved.
+    </Typography>
+  </Box>
 
-      {/* Footer */}
-      <Box
-        sx={{
-          backgroundColor: "#f5f5f5",
-          height: "80px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-        }}
-      >
-        <Typography variant="body2">
-          &copy; 2025 Amiso Cleaning Services. All rights reserved.
-        </Typography>
-      </Box>
+  {/* Navigation links */}
+  <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: 2 }}>
+    <Typography variant="body2" sx={{ marginBottom: 1 }}>Home</Typography>
+    <Typography variant="body2" sx={{ marginBottom: 1 }}>About</Typography>
+    <Typography variant="body2" sx={{ marginBottom: 1 }}>Service</Typography>
+    <Typography variant="body2" sx={{ marginBottom: 1 }}>Team</Typography>
+    <Typography variant="body2" sx={{ marginBottom: 1 }}>Contact</Typography>
+  </Box>
+
+  {/* Social media icons */}
+  <Box sx={{ display: "flex", gap: 2 }}>
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+      <img src="/path-to-instagram-logo.svg" alt="Instagram" style={{ width: 24, height: 24 }} />
+    </a>
+    <a href="https://www.x.com" target="_blank" rel="noopener noreferrer">
+      <img src="/path-to-x-logo.svg" alt="X" style={{ width: 24, height: 24 }} />
+    </a>
+    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+      <img src="/path-to-linkedin-logo.svg" alt="LinkedIn" style={{ width: 24, height: 24 }} />
+    </a>
+    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+      <img src="/path-to-facebook-logo.svg" alt="Facebook" style={{ width: 24, height: 24 }} />
+    </a>
+  </Box>
+</Box>
+
+
     </div>
   );
 }
