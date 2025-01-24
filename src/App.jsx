@@ -114,7 +114,7 @@ function App() {
       >
         <Toolbar>
           <Typography variant="h6" style={{ flexGrow: 1 }}>
-            Amiso Cleaning Services
+            clemaestro Cleaning Services
           </Typography>
           <Button color="inherit">Home</Button>
           <Button color="inherit">About</Button>
@@ -536,7 +536,7 @@ function App() {
   {/* Copyright text */}
   <Box sx={{ marginBottom: 2 }}>
     <Typography variant="body2">
-      &copy; 2025 Amiso Cleaning Services. All rights reserved.
+      &copy; 2025 clemaestro Cleaning Services. All rights reserved.
     </Typography>
   </Box>
 
