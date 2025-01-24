@@ -12,9 +12,36 @@ import {
   Avatar,
   IconButton,
 } from "@mui/material";
+import CountUp from "react-countup";
 import { Phone, Email, LinkedIn, Facebook, Instagram } from "@mui/icons-material";
 
 function App() {
+  const news = [
+    {
+      date: "12 Nov",
+      image: "https://th.bing.com/th/id/OIP.d-9a1QjSHmxUkTgFkjnzGgHaE8?rs=1&pid=ImgDetMain", // Replace with the actual image URL
+      category: "CLEANING",
+      title: "Temporary Ruling Issued",
+      description: "Washla has met the demands of a growing world cleaning tremendous.",
+      author: { name: "Martha Smith", role: "Washla CEO", avatar: "https://via.placeholder.com/50" },
+    },
+    {
+      date: "11 Nov",
+      image: "https://th.bing.com/th/id/OIP.IrUBHhdMo6wWLFueKNreRwHaHa?rs=1&pid=ImgDetMain", // Replace with the actual image URL
+      category: "CLEANING",
+      title: "The Expands California",
+      description: "Welcomed and every sed ut perspiciatis unde omnis iste natus.",
+      author: { name: "Laura Jones", role: "Accounting", avatar: "https://via.placeholder.com/50" },
+    },
+    {
+      date: "10 Nov",
+      image: "https://th.bing.com/th/id/OIP.sOez0JOx_16cnYq5CgFcxwHaHa?w=500&h=500&rs=1&pid=ImgDetMain", // Replace with the actual image URL
+      category: "CLEANING",
+      title: "Temporary Ruling Issued",
+      description: "Washla has met the demands of a growing world. The Cleaning.",
+      author: { name: "Matt Ryan", role: "Lawyer", avatar: "https://via.placeholder.com/50" },
+    },
+  ];
   return (
     <div
       style={{
@@ -94,8 +121,122 @@ function App() {
           <Button color="inherit">Contact</Button>
         </Toolbar>
       </AppBar>
+{/* Hero Section */}
+<Box
+  sx={{
+    backgroundImage: 'url("https://emiratescleaners.com/wp-content/themes/emiratescleaners/images/cleaner1.png")',
+    backgroundSize: "contain", // Ensures the image doesn't stretch
+    backgroundRepeat: "no-repeat", // Prevents the image from repeating
+    backgroundPosition: "right 30% bottom 10%", // Positions the image in the bottom-right corner
+    height: "600px",
+    textAlign: "center",
+    backgroundColor: "#e3f2fd",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 0,
+    position: "relative", // Make it a positioned parent for floating children
+  }}
+>
+  <Typography variant="h3" gutterBottom>
+    A Tradition of Quality Cleaning
+  </Typography>
+  <Typography variant="body1" gutterBottom>
+    A Cleaner Place is a Safer Place
+  </Typography>
+  <Button variant="contained" color="primary">
+    Contact Us
+  </Button>
 
-      {/* Hero Section */}
+  {/* Floating Services Section */}
+  <Box
+    sx={{
+     // backgroundColor: "#ffffff",
+      //boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)", // Adds shadow for floating effect
+      padding: "40px 20px",
+      textAlign: "center",
+      position: "absolute", // Positions it inside the Hero Section
+      top: "580px", // Adjusts its vertical position
+      left: "50%", // Centers horizontally
+      transform: "translate(-50%, -50%)", // Fine-tunes centering
+      zIndex: 10, // Ensures it floats above the Hero Section
+      width: "90%", // Responsive width
+      borderRadius: "10px", // Rounded corners
+    }}
+  >
+    
+    <Grid container spacing={4} justifyContent="center">
+      {/* Professional Cleaning */}
+      <Grid item xs={12} sm={6} md={4}>
+        <Card sx={{ textAlign: "center", padding: "20px" }}>
+          <Avatar
+            sx={{
+              backgroundColor: "#2196f3",
+              margin: "0 auto 20px",
+              width: 60,
+              height: 60,
+            }}
+          >
+            ✨
+          </Avatar>
+          <Typography variant="h6" gutterBottom>
+            Professional Cleaning
+          </Typography>
+          <Typography variant="body2">
+            Housekeeping is responsible for maintaining cleanliness and safety
+            for your space.
+          </Typography>
+        </Card>
+      </Grid>
+      {/* Fast and Efficient */}
+      <Grid item xs={12} sm={6} md={4}>
+        <Card sx={{ textAlign: "center", padding: "20px" }}>
+          <Avatar
+            sx={{
+              backgroundColor: "#ff9800",
+              margin: "0 auto 20px",
+              width: 60,
+              height: 60,
+            }}
+          >
+            ⚡
+          </Avatar>
+          <Typography variant="h6" gutterBottom>
+            Fast and Efficient
+          </Typography>
+          <Typography variant="body2">
+            Our aim is to keep your house clean efficiently through innovation
+            and dedication.
+          </Typography>
+        </Card>
+      </Grid>
+      {/* Renew Your Look */}
+      <Grid item xs={12} sm={6} md={4}>
+        <Card sx={{ textAlign: "center", padding: "20px" }}>
+          <Avatar
+            sx={{
+              backgroundColor: "#4caf50",
+              margin: "0 auto 20px",
+              width: 60,
+              height: 60,
+            }}
+          >
+            🔄
+          </Avatar>
+          <Typography variant="h6" gutterBottom>
+            Renew Your Look
+          </Typography>
+          <Typography variant="body2">
+            Transform your home or office with a refreshed and clean environment
+            today.
+          </Typography>
+        </Card>
+      </Grid>
+    </Grid>
+  </Box>
+</Box>
+      {/* Hero Section
       <Box
         sx={{
           backgroundColor: "#e3f2fd",
@@ -117,7 +258,7 @@ function App() {
         <Button variant="contained" color="primary">
           Contact Us
         </Button>
-      </Box>
+      </Box> */}
 
       {/* Services Section */}
       <Box
@@ -125,6 +266,7 @@ function App() {
           backgroundColor: "#ffffff",
           padding: "20px",
           width: "100%",
+          marginTop:"7%"
         }}
       >
         <Typography variant="h4" align="center" gutterBottom>
@@ -167,68 +309,214 @@ function App() {
         </Grid>
       </Box>
 
-      {/* Team Section */}
       <Box
-        sx={{
-          backgroundColor: "#f5f5f5",
-          padding: "20px",
-          width: "100%",
-        }}
-      >
-        <Typography variant="h4" align="center" gutterBottom>
-          Meet Our Team
-        </Typography>
-        <Grid container spacing={2}>
-          {[
-            { name: "Monica Gordon", role: "House Cleaner" },
-            { name: "Laura Jones", role: "Cleaner" },
-            { name: "Sara Ryan", role: "Office Cleaner" },
-          ].map((teamMember, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card>
-                <Avatar
-                  sx={{
-                    height: 140,
-                    width: 140,
-                    margin: "20px auto",
-                    backgroundColor: "#2196f3",
-                  }}
-                  src={`https://randomuser.me/api/portraits/women/${index + 1}.jpg`}
-                />
-                <CardContent>
-                  <Typography variant="h6">{teamMember.name}</Typography>
-                  <Typography variant="body2">{teamMember.role}</Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+  sx={{
+    backgroundColor: "#f5f5f5",
+    padding: "20px",
+    width: "100%",
+  }}
+>
+  <Typography variant="h4" align="center" gutterBottom>
+    Meet Our Team
+  </Typography>
+  <Grid container spacing={2}>
+    {[
+      { name: "Monica Gordon", role: "House Cleaner", image: "https://th.bing.com/th/id/OIP.lTUm17TcZMkvc8KuXyz2gwHaJQ?w=614&h=768&rs=1&pid=ImgDetMain" },
+      { name: "Laura Jones", role: "Cleaner", image: "https://th.bing.com/th/id/OIP.Sr3jm1GMgIGeRqRkZLbMvAHaJQ?w=1000&h=1250&rs=1&pid=ImgDetMain" },
+      { name: "Sara Ryan", role: "Office Cleaner", image: "https://th.bing.com/th/id/OIP.Sr3jm1GMgIGeRqRkZLbMvAHaJQ?w=1000&h=1250&rs=1&pid=ImgDetMain" },
+    ].map((teamMember, index) => (
+      <Grid item xs={12} sm={6} md={4} key={index}>
+        <Card sx={{ position: "relative", overflow: "hidden" }}>
+          {/* Image as Background */}
+          <Box
+            sx={{
+              height: "300px", // Controls the height of the image container
+              width: "100%",
+              backgroundImage: `url(${teamMember.image})`, // The image as background
+              backgroundSize: "500px 400px", // Ensure image fits without cropping
+              backgroundPosition: "center", // Center the image within the container
+              backgroundRepeat: "no-repeat", // Prevent repeating if the image doesn't cover all space
+              borderRadius: "8px 8px 0 0", // Rounded top corners
+              zIndex: 0, // Image is behind the name/role container
+            }}
+          />
+          
+          {/* Floating Name and Role Container */}
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: "10px", // Position the name just above the image border
+              left: "50%",
+              transform: "translateX(-50%)",
+              zIndex: 1, // Name appears above the image
+              backgroundColor: "#ffffff", // Slight background to make text visible
+              padding: "5px 10px",
+              borderRadius: "10px",
+              textAlign: "center", // Center the name and role text
+              width: "90%", // Adjust width to make sure the name/role container fits within the card
+            }}
+          >
+            <Typography variant="h6">{teamMember.name}</Typography>
+            <Typography variant="body2" color="textSecondary">
+              {teamMember.role}
+            </Typography>
+          </Box>
+        </Card>
+      </Grid>
+    ))}
+  </Grid>
+</Box>
 
-      {/* Statistics Section */}
-      <Box
+   {/* Video Container */}
+   <Box
         sx={{
-          backgroundColor: "#e3f2fd",
-          padding: "20px",
-          textAlign: "center",
+          position: "relative",
+          width: "100%",
+          height: "400px",
+          backgroundImage: `url('https://via.placeholder.com/800x400')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        <Grid container spacing={4}>
-          {[
-            { number: 385, label: "Happy Customers" },
-            { number: 842, label: "Houses Cleaned" },
-            { number: 489, label: "Awards Received" },
-            { number: 1344, label: "Glass Cleaned" },
-          ].map((stat, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
-              <Typography variant="h4" color="primary">
-                {stat.number}
-              </Typography>
-              <Typography variant="body2">{stat.label}</Typography>
-            </Grid>
-          ))}
-        </Grid>
+        {/* Video Iframe */}
+        <iframe
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ"
+          title="Background Video"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            border: "none",
+            zIndex: -1,
+          }}
+          allow="autoplay; loop; fullscreen"
+        ></iframe>
+       
+        
+
+        {/* Floating Statistics Section */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: "-60px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "90%",
+            backgroundColor: "#ffffff",
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+            borderRadius: "8px",
+            padding: "20px",
+          }}
+        >
+             <Grid container spacing={2} justifyContent="center">
+            {[
+              { number: 385, label: "Happy Customers" },
+              { number: 842, label: "Houses Cleaned" },
+              { number: 489, label: "Awards Received" },
+              { number: 1344, label: "Glass Cleaned" },
+            ].map((stat, index) => (
+              <Grid item xs={6} sm={3} key={index}>
+                <Typography variant="h4" color="primary" align="center">
+                  <CountUp
+                    start={0}
+                    end={stat.number}
+                    duration={2} // Duration of the animation in seconds
+                    separator=","
+                  />
+                </Typography>
+                <Typography variant="body2" align="center">
+                  {stat.label}
+                </Typography>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       </Box>
+      <Box sx={{ padding: "80px 20px", textAlign: "center", backgroundColor: "#f8f9fa" }}>
+      {/* Title */}
+      <Typography variant="h5" fontWeight="bold" gutterBottom>
+        WHY CHOOSE US
+      </Typography>
+      <Typography variant="h3" fontWeight="bold" gutterBottom>
+        Recent News
+      </Typography>
+      <Typography variant="body1" color="textSecondary" sx={{ marginBottom: "40px" }}>
+        We specialize in intelligent & effective Search and believe in the power of partnerships to grow business.
+      </Typography>
+
+      {/* News Cards */}
+      <Grid container spacing={4} justifyContent="center">
+        {news.map((item, index) => (
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <Card
+              sx={{
+                borderRadius: "8px",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                overflow: "hidden",
+                position: "relative",
+                
+              }}
+            >
+              {/* Image */}
+              <Box
+                component="img"
+                src={item.image}
+                alt={item.title}
+                sx={{
+                  width: "100%",
+                  height: "200px",
+                  objectFit: "cover",
+                }}
+              />
+              {/* Date */}
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: "10px",
+                  left: "10px",
+                  backgroundColor: "#0288d1",
+                  color: "#fff",
+                  padding: "5px 10px",
+                  borderRadius: "4px",
+                  fontWeight: "bold",
+                }}
+              >
+                {item.date}
+              </Box>
+              {/* Content */}
+              <CardContent>
+                <Typography variant="caption" color="primary" fontWeight="bold" gutterBottom>
+                  {item.category}
+                </Typography>
+                <Typography variant="h6" fontWeight="bold" gutterBottom>
+                  {item.title}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" gutterBottom>
+                  {item.description}
+                </Typography>
+                {/* Author */}
+                <Box display="flex" alignItems="center" padding="10px 70px" mt={2}>
+                  <Avatar src={item.author.avatar} alt={item.author.name} />
+                  <Box ml={2}>
+                    <Typography variant="body2" fontWeight="bold">
+                      {item.author.name}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary">
+                      {item.author.role}
+                    </Typography>
+                  </Box>
+                </Box>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
 
       {/* Footer */}
       <Box
